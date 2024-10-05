@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 
 interface SectionProps {
-  children: ReactNode; // children의 타입 정의
+  children: ReactNode; 
 }
 
 const Section: React.FC<SectionProps> = ({ children }) => {
