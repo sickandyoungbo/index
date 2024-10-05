@@ -14,7 +14,7 @@ const Main = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
         setFadeIn(true); 
       }, 1000); 
-    }, 4000); 
+    }, 3000); 
 
     return () => clearInterval(interval);
   }, []);
