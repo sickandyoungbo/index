@@ -1,1 +1,43 @@
+.swiper-pagination-fraction {
+  width: fit-content !important;
+  position: absolute !important;
+  right: 20px !important;
+  left: auto !important;
+  bottom: 20px !important;
+  font-size: 1rem;
+  font-family: "Dream Cottage Regular", sans-serif;
+}
 
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ffffff !important; /* 버튼 색상 */
+}
+ 
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 24px !important; /* 버튼 크기 */
+}
+ 
+.swiper-button-disabled {
+  opacity: 0.35; /* 비활성 버튼 투명도 */
+  cursor: auto;
+  pointer-events: none;
+}
+
+.custom-next-button {
+  width: 12px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  z-index: 9;
+}
+
+.custom-prev-button {
+  width: 12px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20px;
+  z-index: 9;
+}

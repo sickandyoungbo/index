@@ -6,6 +6,10 @@ import Section from './components/Section';
 import weddingDayPhotoUrl from './assets/images/wedding_day.png';
 import Title from './components/Title';
 import Date from './components/Date';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import PhotobookSwiper from './components/PhotobookSwiper';
 
 function App() {
   return (
@@ -63,13 +67,20 @@ function App() {
             <p className='pl-2 font-bold w-[42px] flex justify-between'><span className='block'>안</span><span className='block'>식</span></p>
           </div>
         </div>
-        <div>
+        <div className='pb-[50px]'>
           <div className='flex text-xs pt-2'>
             <p className='pr-2'>심재호</p>
             <p>이경희<span className='text-[10px]'>의</span></p>
             <p className='pl-3 text-[10px] w-8 text-right'>딸</p>
             <p className='pl-2 font-bold w-[42px]'>심영보</p>
           </div>
+        </div>
+      </Section>
+      <Section>
+        <Title>Photobook</Title>
+        <p className='text-[8px] pt-[10px]'>사진을 좌우로 넘겨보세요.</p>
+        <div className='pt-5'>
+          <PhotobookSwiper />
         </div>
       </Section>
     </div>
