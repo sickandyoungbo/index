@@ -22,7 +22,7 @@ function App() {
             2024. 12. 07. 토요일 오전 11시<br/>
             경기도 성남시 분당구 안양판교로 1219
           </p>
-          <p className='pt-1 text-[10px]'>우리들교회 판교채플 7층(탄설홀)</p>
+          <p className='pt-1 text-[10px] font-bold'>우리들교회 판교채플 7층(탄설홀)</p>
           <div className='px-[70px] pt-5'>
             <img src={weddingDayPhotoUrl} />
           </div>
@@ -61,27 +61,63 @@ function App() {
         </p>
         <div className='pt-5'>
           <div className='flex text-xs'>
-            <p className='pr-2'>안성진</p>
-            <p>이월순<span className='text-[10px]'>의</span></p>
-            <p className='pl-3 text-[10px] w-8 text-right'>아들</p>
-            <p className='pl-2 font-bold w-[44px] flex justify-between'><span className='block'>안</span><span className='block'>식</span></p>
+            <div className='flex flex-col'>
+              <p className=''>안성진</p>
+              <p className='pr-2'>심재호</p>
+            </div>
+            <div className='flex flex-col'>
+              <p>이월순<span className='text-[10px]'>의</span></p>
+              <p>이경희<span className='text-[10px]'>의</span></p>
+            </div>
+            <div className='flex flex-col justify-end pl-3'>
+              <p className='text-[10px] text-right'>아들</p>
+              <p className='text-[10px] text-right'>딸</p>
+            </div>
+            <div className='flex flex-col pl-2'>
+              <p className='font-bold flex justify-between'>
+                <span className='block'>안</span>
+                <span className='block'>식</span>
+              </p>
+              <p className='font-bold'>심영보</p>
+            </div>
           </div>
         </div>
         <div className='pb-[50px]'>
           <div className='flex text-xs pt-2'>
-            <p className='pr-2'>심재호</p>
-            <p>이경희<span className='text-[10px]'>의</span></p>
-            <p className='pl-3 text-[10px] w-8 text-right'>딸</p>
-            <p className='pl-2 font-bold w-[44px] text-center'>심영보</p>
+            
           </div>
         </div>
       </Section>
       <Section>
         <Title>Photobook</Title>
         <p className='text-[8px] pt-[10px]'>사진을 좌우로 넘겨보세요.</p>
-        <div className='pt-5'>
+        <div className='pt-5 pb-[50px]'>
           <PhotobookSwiper />
         </div>
+      </Section>
+      <Section>
+        <p className='border-b-[2px] border-black pb-[7px] pt-[10px] text-[10px] font-bold'>오시는 길</p>
+        <div className='px-5 w-full pb-[50px]'>
+          <div className='mt-5 rounded-md h-[300px] w-full border-[#cccccc] border'></div>
+          <div className='mt-5 flex justify-between'>
+            <button>
+              <img />
+              <p className='pretendard font-medium text-[9px]'>티맵 연결</p>
+            </button>
+            <button>
+              <img />
+              <p className='pretendard font-medium text-[9px]'>네이버지도 연결</p>
+            </button>
+            <button>
+              <img />
+              <p className='pretendard font-medium text-[9px]'>카카오맵 연결</p>
+            </button>
+          </div>
+        </div>
+      </Section>
+      <Section>
+        <p className='border-b-[2px] border-black pb-[7px] pt-[10px] text-[10px] font-bold'>마음 전하실 곳</p>
+        <div className='pt-[30px]'></div>
       </Section>
     </div>
   );
