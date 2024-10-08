@@ -6,6 +6,7 @@ import Section from './components/Section';
 import weddingDayPhotoUrl from './assets/images/wedding_day.png';
 import Title from './components/Title';
 import Date from './components/Date';
+import Map from './components/Map';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -98,7 +99,7 @@ function App() {
       <Section>
         <p className='border-b-[2px] border-black pb-[7px] pt-[10px] text-[10px] font-bold'>오시는 길</p>
         <div className='px-5 w-full pb-[50px]'>
-          <div className='mt-5 rounded-md h-[300px] w-full border-[#cccccc] border'></div>
+          <Map latitude={37.38237} longitude={127.1014} />
           <div className='mt-5 flex justify-between'>
             <button>
               <img />
