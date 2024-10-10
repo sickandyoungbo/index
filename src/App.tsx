@@ -8,7 +8,7 @@ import tmapLogoUrl from './assets/images/tmapLogo.png';
 import navermapLogoUrl from './assets/images/navermapLogo.png';
 import kakaomapLogoUrl from './assets/images/kakaomapLogo.png';
 import Title from './components/Title';
-import Date from './components/Date';
+import WeddingDate from './components/WeddingDate';
 import Map from './components/Map';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -17,6 +17,7 @@ import PhotobookSwiper from './components/PhotobookSwiper';
 import ContentContainer from './components/ContentContainer';
 import SubTitle from './components/SubTitle';
 import WorshipItem from './components/WorshipItem';
+import MapButton from './components/MapButton';
 
 function App() {
   return (
@@ -37,13 +38,13 @@ function App() {
             <div className='pt-[30px] w-full dream-cottage'>
               <p className='text-xl text-center'>December</p>
               <div className='flex pt-4 justify-between'>
-                <Date day="Sun." date="1" />
-                <Date day="Mon." date="2" />
-                <Date day="Tue." date="3" />
-                <Date day="Wed." date="4" />
-                <Date day="Thu." date="5" />
-                <Date day="Fri." date="6" />
-                <Date day="Sat." date="7" />
+                <WeddingDate day="Sun." date="1" />
+                <WeddingDate day="Mon." date="2" />
+                <WeddingDate day="Tue." date="3" />
+                <WeddingDate day="Wed." date="4" />
+                <WeddingDate day="Thu." date="5" />
+                <WeddingDate day="Fri." date="6" />
+                <WeddingDate day="Sat." date="7" />
               </div>
             </div>
           </ContentContainer>
@@ -142,18 +143,9 @@ function App() {
         <ContentContainer>
           <Map latitude={37.38237} longitude={127.1014} />
           <div className='mt-5 flex justify-between'>
-            <button className='flex items-center p-3 border-[#CCCCCC] border-[0.5px] rounded-md'>
-              <img className='w-7 mr-1' src={tmapLogoUrl} />
-              <p className='pretendard font-medium text-sm'>TMAP</p>
-            </button>
-            <button className='flex items-center p-3 border-[#CCCCCC] border-[0.5px] rounded-md'>
-              <img className='w-7 mr-1' src={navermapLogoUrl} />
-              <p className='pretendard font-medium text-sm'>네이버지도</p>
-            </button>
-            <button className='flex items-center p-3 border-[#CCCCCC] border-[0.5px] rounded-md'>
-              <img className='w-7 mr-1' src={kakaomapLogoUrl} />
-              <p className='pretendard font-medium text-sm'>카카오맵</p>
-            </button>
+            <MapButton iconUrl={tmapLogoUrl} name='TMAP' />
+            <MapButton iconUrl={navermapLogoUrl} name='네이버지도' />
+            <MapButton iconUrl={kakaomapLogoUrl} name='카카오맵' />
           </div>
         </ContentContainer>
       </Section>
