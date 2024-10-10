@@ -9,7 +9,6 @@ const Map = ({
   longitude: number;
 }) => {
   const mapRef = useRef<HTMLDivElement | null>(null);
-  const [isMapLoaded, setMapLoaded] = useState(false);
 
   const initMap = () => {
     const { naver } = window;
@@ -33,21 +32,26 @@ const Map = ({
         mapInstance?.setZoom(17);
       });
     }
-    
-    // 지도 로드 완료
-    setMapLoaded(true);
   };
 
   useEffect(() => {
-    initMap();
-  }, []);
+    if (typeof window.naver !== "undefined") {
+      initMap();
+    } else {
+      const existingScript = document.querySelector('script[src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ara9y50yn3"]') as HTMLScriptElement;
+      if (!existingScript) {
+        const script = document.createElement("script");
+        script.src = "https://openapi.map.naver.com/oapi/v3/maps.js?ncpClientId=ara9y50yn3";
+        script.onload = () => initMap();
+        document.head.appendChild(script);
+      } else {
+        existingScript.onload = () => initMap();
+      }
+    }
+  }, [latitude, longitude]);
 
   return (
-    <>
-      {isMapLoaded && (
-        <div id="map" ref={mapRef} className="mt-5 h-[400px] border-[#cccccc] border-[0.5px] rounded-md" />
-      )}
-    </>
+      <div id="map" ref={mapRef} className="mt-5 h-[400px] border-[#cccccc] border-[0.5px] rounded-md"></div>
   );
 };
 
