@@ -64,7 +64,7 @@ const Map = ({
   return (
     <>
       {isMapLoaded && (
-        <div id="map" className="mt-5 h-[400px] border-[#cccccc] border rounded-lg" />
+        <div id="map" className="mt-5 h-[400px] border-[#cccccc] border-[0.5px] rounded-md" />
       )}
     </>
   );
