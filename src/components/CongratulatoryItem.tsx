@@ -3,7 +3,7 @@ import arrowUpPinkUrl from '../assets/icons/arrow_up_pink.png';
 import arrowUpBlueUrl from '../assets/icons/arrow_up_blue.png';
 import arrowDownPinkUrl from '../assets/icons/arrow_down_pink.png';
 import arrowDownBlueUrl from '../assets/icons/arrow_down_blue.png';
-import '../style/categoryItem.css'
+import '../style/congratulatoryItem.css'
 
 interface CongratulatoryItemProps {
   who: 'groom' | 'bride';

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import mainImageUrl from "../assets/images/image_11.png";
+import mainImageUrl from "../assets/images/image_main.png";
 import "../style/main.css";
 
 const Main = () => {
@@ -13,8 +13,8 @@ const Main = () => {
       setTimeout(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
         setFadeIn(true); 
-      }, 1000); 
-    }, 3000); 
+      }, 600); 
+    }, 2500); 
 
     return () => clearInterval(interval);
   }, []);
@@ -24,8 +24,8 @@ const Main = () => {
       <img src={mainImageUrl} />
       <div className="w-full absolute top-1/2 text-center text-white -translate-y-1/2 flex justify-center items-center">
         <p className={`text-[27px] dream-cottage ${fadeIn ? 'fade-in' : 'fade-out'}`}>
-          {texts[currentIndex]}&nbsp;
-          {currentIndex === 0 && <span className={'croisan text-xl'}>&</span>}
+          {texts[currentIndex]}
+          {currentIndex === 0 && <span className={'croisan text-xl'}>&nbsp;&</span>}
         </p>
         
       </div>
