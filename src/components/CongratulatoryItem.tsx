@@ -29,7 +29,7 @@ const CongratulatoryItem = ({
           className="flex justify-between items-center border-[#CCCCCC] border-[1px] py-5 px-7 rounded-xl font-bold z-10 bg-white relative cursor-pointer"
           onClick={toggleDropdown}
         >
-          <p className="text-2xl font-bold">
+          <p className="text-xl font-bold">
             {who === 'groom' ? '신랑측' : '신부측'}
           </p>
           <img
@@ -46,7 +46,7 @@ const CongratulatoryItem = ({
             alt="arrow icon"
           />
         </div>
-        <div className={`pretendard font-bold text-2xl border-[#CCCCCC] border-[1px] -mt-5 rounded-xl slide ${isOpen ? 'open' : ''}`}>
+        <div className={`font-medium text-xl border-[#CCCCCC] border-[1px] -mt-5 rounded-xl slide ${isOpen ? 'open' : ''}`}>
           <p className="pt-[45px] px-[30px]">{accountNumber}</p>
           <p className="pb-[30px] px-[30px]">{bankName}</p>
         </div>

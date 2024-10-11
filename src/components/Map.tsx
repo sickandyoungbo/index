@@ -51,7 +51,7 @@ const Map = ({
   }, [latitude, longitude]);
 
   return (
-      <div id="map" ref={mapRef} className="mt-5 h-[300px] border-[#cccccc] border-[0.5px] rounded-md"></div>
+      <div id="map" ref={mapRef} className="mt-5 h-[300px] border-[#cccccc] border-[0.5px] rounded-md mb-[30px] overflow-hidden bg-transparent"></div>
   );
 };
 

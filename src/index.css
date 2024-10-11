@@ -4,12 +4,8 @@
 
 body {
   margin: 0;
-  font-family: "TAEBAEK milkyway", sans-serif;
-  touch-action: pan-y
-}
-
-.pretendard {
   font-family: "Pretendard", sans-serif;
+  touch-action: pan-y
 }
 
 .dream-cottage {

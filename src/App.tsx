@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Main from './components/Main';
@@ -20,7 +20,44 @@ import WorshipItem from './components/WorshipItem';
 import MapButton from './components/MapButton';
 import CongratulatoryItem from './components/CongratulatoryItem';
 
+declare global {
+  interface Window {
+    Kakao: any; // Kakao의 타입을 정확하게 알면, any 대신 적절한 타입을 사용합니다.
+  }
+}
+
 function App() {
+  const query = new URL(window.location.href);
+  const shareQueryString = query.searchParams.get('share');
+  const showShare = Boolean(shareQueryString);
+
+  const [shareInfo, setShareInfo] = useState({
+    shareTitle: '',
+    shareDesc: '',
+    shareUrl: '',
+    shareImage: '',
+    templateId: '',
+    shareButtonUrl: '',
+    shareButton: ''
+  });
+  
+  useEffect(() => {
+    if (!window.Kakao.isInitialized()) {
+      window.Kakao.init("4c6ee9bf93490c29dc7ea70a7d4b2eba");
+    }
+  }, []);
+
+  const shareKakao = () => {
+    if (window.Kakao) {
+      const kakao = window.Kakao;
+      kakao.Share.createCustomButton({
+        container: '#kakaotalk-sharing-btn',
+        templateId: 113053
+      });
+    }
+    
+  }
+
   return (
     <div>
       <Main />
@@ -29,7 +66,7 @@ function App() {
           <div className='w-full h-5'></div>
           <Title>Wedding Day</Title>
           <ContentContainer>
-            <p className='text-center text-[17px]'>
+            <p className='text-center text-[17px] leading-[27.2px]'>
               2024. 12. 07. 토요일 오전 11시<br/>
               경기도 성남시 분당구 안양판교로 1219
             </p>
@@ -55,7 +92,7 @@ function App() {
         <Title>Greetings</Title>
         <ContentContainer>
           <div className='border-[1px] border-[#FADCE7] p-5 rounded-[13px]'>
-            <div className='text-base flex font-semibold'>
+            <div className='text-base flex font-medium'>
               <p className='pr-[14px]'>42</p>
               <p>
                 우리 두 사람이 여호와의 이름으로 맹세하여 이르기를여호와께서 영원히 나와 너 사이에 계시고...
@@ -63,15 +100,15 @@ function App() {
             </div>
             <p className='text-base font-bold pt-[10px] text-center'>사무엘상 20:42</p>
           </div>
-          <p className='text-center text-[13px] pt-6'>
+          <p className='text-center text-sm pt-6'>
             식이는 하나님의 영원한 보살핌 영보를 만났고<br/>
             영보는 하나님이 보내신 이 땅의 안식을 만났습니다.
           </p>
-          <p className='text-center text-[13px] pt-6'>
+          <p className='text-center text-sm pt-6'>
             이제 하나님의 사랑 안에서<br/>
             서로의 돕는 배필이 되고자 합니다.
           </p>
-          <p className='text-center text-[13px] pt-6'>
+          <p className='text-center text-sm pt-6'>
             행복이 아닌 '네가 나보다 옳도다'의 거룩으로 세워지는<br/>
             가정이 될 수 있게 함께 기도해 주시고 축복해 주시기 바랍니다.<br/>
           </p>
@@ -140,7 +177,7 @@ function App() {
             <PhotobookSwiper />
           </div>
           {/* 오시는 길 이동 포인트 */}
-          <div id='location' className='absolute bottom-[80.5px]'></div>
+          <div id='location' className='absolute bottom-[79px]'></div>
         </div>
       </Section>
       <Section>
@@ -148,7 +185,7 @@ function App() {
         <SubTitle>오시는 길을 안내해드립니다.</SubTitle>
         <ContentContainer>
           <Map latitude={37.38237} longitude={127.1014} />
-          <div className='pt-[30px] flex justify-between'>
+          <div className='flex justify-between relative z-[999] bg-white'>
             <MapButton iconUrl={tmapLogoUrl} name='TMAP' />
             <MapButton iconUrl={navermapLogoUrl} name='네이버지도' />
             <MapButton iconUrl={kakaomapLogoUrl} name='카카오맵' />
@@ -173,6 +210,13 @@ function App() {
           </div>
         </ContentContainer>
       </Section>
+      {
+        showShare && (
+          <div className='px-5'>
+            <button id='kakaotalk-sharing-btn' onClick={shareKakao}>카카오 공유하기</button>
+          </div>
+        )
+      }
     </div>
   );
 }

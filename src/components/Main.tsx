@@ -29,10 +29,10 @@ const Main = () => {
         </p>
         
       </div>
-      <div className="absolute bottom-[50px] w-full text-center text-white text-[10px] leading-[16px]">
+      <div className="absolute bottom-[50px] w-full text-center text-white text-xs">
         <p>2024.12.07. 토요일 오전 11시</p>
         <p>경기도 성남시 분당구 안양판교로 1219</p>
-        <p className="pt-1">우리들교회 판교채플 7층(탄설홀)</p>
+        <p className="pt-1 font-medium">우리들교회 판교채플 7층(탄설홀)</p>
       </div>
     </div>
   );
