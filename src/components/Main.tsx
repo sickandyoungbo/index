@@ -13,8 +13,8 @@ const Main = () => {
       setTimeout(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
         setFadeIn(true); 
-      }, 600); 
-    }, 2500); 
+      }, 500); 
+    }, 2200); 
 
     return () => clearInterval(interval);
   }, []);
