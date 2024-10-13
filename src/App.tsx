@@ -30,16 +30,6 @@ function App() {
   const query = new URL(window.location.href);
   const shareQueryString = query.searchParams.get('share');
   const showShare = Boolean(shareQueryString);
-
-  const [shareInfo, setShareInfo] = useState({
-    shareTitle: '',
-    shareDesc: '',
-    shareUrl: '',
-    shareImage: '',
-    templateId: '',
-    shareButtonUrl: '',
-    shareButton: ''
-  });
   
   useEffect(() => {
     if (!window.Kakao.isInitialized()) {
@@ -63,20 +53,19 @@ function App() {
       <Main />
       <Header />
       <Section>
-          <div className='w-full h-5'></div>
           <Title>Wedding Day</Title>
           <ContentContainer>
-            <p className='text-center text-[17px] leading-[27.2px]'>
+            <p className='text-center font-bold'>
               2024. 12. 07. 토요일 오전 11시<br/>
               경기도 성남시 분당구 안양판교로 1219
             </p>
-            <p className='pt-2 text-[17px] font-bold text-center'>우리들교회 판교채플 7층(탄설홀)</p>
-            <div className='px-[50px] pt-[30px]'>
+            <p className='pt-2 text-center'>우리들교회 판교채플 7층(탄설홀)</p>
+            <div className='px-[40px] pt-[30px]'>
               <img src={weddingDayPhotoUrl} />
             </div>
-            <div className='pt-[30px] w-full dream-cottage'>
-              <p className='text-xl text-center'>December</p>
-              <div className='flex pt-4 justify-between'>
+            <div className='pt-[30px] w-full dream-cottage leading-[1]'>
+              <p className='text-base text-center'>December</p>
+              <div className='flex pt-5 justify-between'>
                 <WeddingDate day="Sun." date="1" />
                 <WeddingDate day="Mon." date="2" />
                 <WeddingDate day="Tue." date="3" />
@@ -91,53 +80,44 @@ function App() {
       <Section>
         <Title>Greetings</Title>
         <ContentContainer>
-          <div className='border-[1px] border-[#FADCE7] p-5 rounded-[13px]'>
-            <div className='text-base flex font-medium'>
-              <p className='pr-[14px]'>42</p>
-              <p>
+          <div className='border border-[#FADCE7] p-4 rounded-[13px]'>
+            <div className='flex'>
+              <p className='pr-[14px] text-xs leading-[1.4]'>42</p>
+              <p className='text-xs leading-[1.4]'>
                 우리 두 사람이 여호와의 이름으로 맹세하여 이르기를여호와께서 영원히 나와 너 사이에 계시고...
               </p>
             </div>
-            <p className='text-base font-bold pt-[10px] text-center'>사무엘상 20:42</p>
+            <p className='font-semibold pt-[10px] text-center text-xs leading-[1.4]'>사무엘상 20:42</p>
           </div>
-          <p className='text-center text-sm pt-6'>
+          <p className='text-center pt-6'>
             식이는 하나님의 영원한 보살핌 영보를 만났고<br/>
             영보는 하나님이 보내신 이 땅의 안식을 만났습니다.
           </p>
-          <p className='text-center text-sm pt-6'>
+          <p className='text-center pt-6'>
             이제 하나님의 사랑 안에서<br/>
             서로의 돕는 배필이 되고자 합니다.
           </p>
-          <p className='text-center text-sm pt-6'>
-            행복이 아닌 '네가 나보다 옳도다'의 거룩으로 세워지는<br/>
-            가정이 될 수 있게 함께 기도해 주시고 축복해 주시기 바랍니다.<br/>
+          <p className='text-center pt-6'>
+            행복이 아닌 '네가 나보다 옳도다'의<br/>
+            거룩으로 세워지는 가정이 될 수 있게 축복해주세요.
           </p>
-          <div className='mt-[30px] border border-black rounded-[13px] py-[14px]'>
-            <div className='flex text-base justify-center'>
-              <div className='flex flex-col pr-[10px] font-semiBold'>
-                <p>안성진</p>
-                <p>심재호</p>
-              </div>
-              <div className='flex flex-col font-semiBold'>
-                <p>이월순<span className='text-sm font-normal'>의</span></p>
-                <p>이경희<span className='text-sm font-normal'>의</span></p>
-              </div>
-              <div className='flex flex-col h-12 justify-around pl-2'>
-                <p className='text-sm text-right'>아들</p>
-                <p className='text-sm text-right'>딸</p>
-              </div>
-              <div className='flex flex-col pl-2'>
-                <p className='font-bold flex justify-between'>
-                  <span className='block'>안</span>
-                  <span className='block'>식</span>
-                </p>
-                <p className='font-bold'>심영보</p>
-              </div>
+          <div className='mt-[60px] flex flex-col mx-auto w-fit'>
+            <div className='flex items-center'>
+              <p className='leading-[1]'>안성진<span className='text-xs opacity-0'>의</span></p>
+              <p className='pl-[13px] pr-[11px] leading-[1]'>이월순<span className='text-xs'>의</span></p>
+              <p className='text-xs leading-[1]'>아들</p>
+              <p className='font-semibold pl-[9px] leading-[1]'>안식</p>
+            </div>
+            <div className='flex items-center pt-[14px]'>
+              <p className='leading-[1]'>심재호<span className='text-xs opacity-0'>의</span></p>
+              <p className='pl-[13px] pr-[11px] leading-[1]'>이경희<span className='text-xs'>의</span></p>
+              <p className='text-xs leading-[1]'><span className='opacity-0'>아</span>딸</p>
+              <p className='font-semibold pl-[9px] leading-[1]'>심영보</p>
             </div>
           </div>
         </ContentContainer>
       </Section>
-      <Section>
+      {/* <Section>
         <Title>Worship</Title>
         <SubTitle>예배순서 안내입니다.</SubTitle>
         <ContentContainer>
@@ -148,15 +128,15 @@ function App() {
           <WorshipItem leftText='봉독' rightText='주례자' hasMiddle={true} middleText='### NN:NN'></WorshipItem>
           <div className='border-[1px] font-semiBold border-[#FADCE7] p-5 rounded-[13px] mt-5'>
             <div className='flex'>
-                <p className='pr-[11px]'>22</p>
+                <p className='pr-[10px]'>22</p>
               <p>일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔</p>
             </div>
             <div className='flex pt-2'>
-                <p className='pr-[11px]'>23</p>
+                <p className='pr-[10px]'>23</p>
               <p>일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔</p>
             </div>
             <div className='flex pt-2'>
-                <p className='pr-[11px]'>24</p>
+                <p className='pr-[10px]'>24</p>
               <p>일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔</p>
             </div>
           </div>
@@ -168,7 +148,7 @@ function App() {
           <WorshipItem leftText='인사/행진' rightText='신랑 & 신부'></WorshipItem>
           <WorshipItem leftText='혼인서약' rightText='신랑/신부'></WorshipItem>
         </ContentContainer>
-      </Section>
+      </Section> */}
       <Section>
         <div className='flex flex-col items-center relative'>
           <Title>Photobook</Title>
@@ -177,7 +157,7 @@ function App() {
             <PhotobookSwiper />
           </div>
           {/* 오시는 길 이동 포인트 */}
-          <div id='location' className='absolute bottom-[79px]'></div>
+          <div id='location' className='absolute bottom-[60px]'></div>
         </div>
       </Section>
       <Section>
@@ -185,29 +165,42 @@ function App() {
         <SubTitle>오시는 길을 안내해드립니다.</SubTitle>
         <ContentContainer>
           <Map latitude={37.38237} longitude={127.1014} />
-          <div className='flex justify-between relative z-[999] bg-white'>
-            <MapButton iconUrl={tmapLogoUrl} name='TMAP' />
-            <MapButton iconUrl={navermapLogoUrl} name='네이버지도' />
-            <MapButton iconUrl={kakaomapLogoUrl} name='카카오맵' />
-          </div>
         </ContentContainer>
       </Section>
+      <div className='flex justify-between relative z-[999] bg-white px-5 overflow-visible'>
+        <MapButton iconUrl={tmapLogoUrl} name='TMAP' />
+        <MapButton iconUrl={navermapLogoUrl} name='네이버지도' />
+        <MapButton iconUrl={kakaomapLogoUrl} name='카카오맵' />
+      </div>
       <Section>
         <Title>Congratulatory</Title>
         <SubTitle>마음을 전하실 곳</SubTitle>
         <ContentContainer>
           <CongratulatoryItem
             who='groom'
-            bankName='카카오뱅크 안식'
-            accountNumber='1111-1111-1111-1111'
+            groomAccount={`1111-1111-1111-1111\n카카오뱅크 안식`}
+            groomParent1Account={`1111-1111-1111-1111\n카카오뱅크 안식`}
+            groomParent2Account={`1111-1111-1111-1111\n카카오뱅크 안식`}
           />
-          <div className='mt-[30px] mb-[60px]'>
+          <div className='mt-[30px]'>
             <CongratulatoryItem
               who='bride'
-              bankName='카카오뱅크 심영보'
-              accountNumber='1111-1111-1111-1111'
+              brideAccount={`1111-1111-1111-1111\n카카오뱅크 안식`}
+              brideParent1Account={`1111-1111-1111-1111\n카카오뱅크 안식`}
             />
           </div>
+        </ContentContainer>
+      </Section>
+      <Section>
+        <Title>Notice</Title>
+        <ContentContainer>
+          <div className='w-full py-[10px] px-[4.5px] border-b border-[#ccc] text-center'>
+            화환은 정중히 사양합니다. 마음만 감사히 받겠습니다.
+          </div>
+          <div className='w-full py-[10px] px-[4.5px] border-b border-[#ccc] text-center'>
+            식사는 3층 식당에서 진행됩니다.
+          </div>
+          <div className='mb-[60px]'></div>
         </ContentContainer>
       </Section>
       {

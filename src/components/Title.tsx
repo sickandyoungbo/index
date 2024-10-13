@@ -6,7 +6,7 @@ interface TitleProps {
 
 const Title: React.FC<TitleProps> = ({ children }) => {
   return (
-    <p className='border-b-[2px] border-black pb-2 dream-cottage text-[22px] font-bold'>{children}</p>
+    <p className='border-b border-black pb-2 dream-cottage text-[17px] leading-[1]'>{children}</p>
   )
 }
 
