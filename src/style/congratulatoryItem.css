@@ -1,9 +1,8 @@
 .slide {
   overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.3s ease-in-out;
+  display: none;
 }
 
 .slide.open {
-  max-height: 400px;
+  display: block;
 }

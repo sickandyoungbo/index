@@ -92,9 +92,9 @@ const MapButton = ({
   }
 
   return (
-    <button className='flex items-center p-3 border-[#CCCCCC] border-[0.5px] rounded-md' onClick={() => clickMapButton(name)}>
+    <button className='flex items-center px-[9px] py-4 border-[#CCCCCC] border rounded-md' onClick={() => clickMapButton(name)}>
       <img className='w-7 mr-1' src={iconUrl} />
-      <p className='font-medium'>{name}</p>
+      <p className='font-medium text-sm'>{name}</p>
     </button>
   )
 }

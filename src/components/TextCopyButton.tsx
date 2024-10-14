@@ -18,7 +18,7 @@ const TextCopyButton = ({text}: TextCopyButtonProps) => {
   }
 
   return (
-    <button className="p-[10px] bg-[#F1F1F1] rounded-lg" onClick={handleCopy}>계좌 복사</button>
+    <button className="p-[10px] bg-[#F1F1F1] rounded-lg font-medium" onClick={handleCopy}>계좌 복사</button>
   )
 }
 

@@ -59,14 +59,14 @@ const CongratulatoryItem = ({
           <div className="p-[18px] border-b border-[#ccc]">
             <p className={`pt-[14px] font-bold ${who === 'groom' ? 'text-[#387BF9]' : 'text-[#EF4576]'} `}>{who === 'groom' ? '신랑' : '신부'}</p>
             <div className="flex justify-between items-center mt-[10px]">
-              <p className="whitespace-pre-line">{who === 'groom' ? groomAccount : brideAccount}</p> 
+              <p className="whitespace-pre-line font-medium">{who === 'groom' ? groomAccount : brideAccount}</p> 
               <TextCopyButton text={`${who === 'groom' ? groomAccount : brideAccount}`} />
             </div> 
           </div>
           <div className={`p-[14px] ${(groomParent2Account || brideParent2Account) && 'border-b border-[#ccc]'}`}>
             <p className={`font-bold ${who === 'groom' ? 'text-[#387BF9]' : 'text-[#EF4576]'} `}>{who === 'groom' ? '신랑' : '신부'} 아버지</p>
             <div className="flex justify-between items-center mt-[10px]">
-              <p className="whitespace-pre-line">{who === 'groom' ? groomParent1Account : brideParent1Account}</p> 
+              <p className="whitespace-pre-line font-medium">{who === 'groom' ? groomParent1Account : brideParent1Account}</p> 
               <TextCopyButton text={`${who === 'groom' ? groomParent1Account : brideParent1Account}`} />
             </div>  
           </div>
@@ -75,7 +75,7 @@ const CongratulatoryItem = ({
               <div className="p-[14px]">
                 <p className={`font-bold ${who === 'groom' ? 'text-[#387BF9]' : 'text-[#EF4576]'} `}>{who === 'groom' ? '신랑' : '신부'} 어머니</p>
                 <div className="flex justify-between items-center mt-[10px]">
-                  <p className="whitespace-pre-line">{who === 'groom' ? groomParent2Account : brideParent2Account}</p> 
+                  <p className="whitespace-pre-line font-medium">{who === 'groom' ? groomParent2Account : brideParent2Account}</p> 
                   <TextCopyButton text={`${who === 'groom' ? groomParent2Account : brideParent2Account}`} />
                 </div>  
               </div>

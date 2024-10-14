@@ -84,7 +84,7 @@ function App() {
             <div className='flex'>
               <p className='pr-[14px] text-xs leading-[1.4]'>42</p>
               <p className='text-xs leading-[1.4]'>
-                우리 두 사람이 여호와의 이름으로 맹세하여 이르기를여호와께서 영원히 나와 너 사이에 계시고...
+                우리 두 사람이 여호와의 이름으로 맹세하여 이르기를 여호와께서 영원히 나와 너 사이에 계시고...
               </p>
             </div>
             <p className='font-semibold pt-[10px] text-center text-xs leading-[1.4]'>사무엘상 20:42</p>
@@ -104,13 +104,13 @@ function App() {
           <div className='mt-[60px] flex flex-col mx-auto w-fit'>
             <div className='flex items-center'>
               <p className='leading-[1]'>안성진<span className='text-xs opacity-0'>의</span></p>
-              <p className='pl-[13px] pr-[11px] leading-[1]'>이월순<span className='text-xs'>의</span></p>
+              <p className='pl-1 pr-[11px] leading-[1]'>이월순<span className='text-xs'>의</span></p>
               <p className='text-xs leading-[1]'>아들</p>
               <p className='font-semibold pl-[9px] leading-[1]'>안식</p>
             </div>
             <div className='flex items-center pt-[14px]'>
               <p className='leading-[1]'>심재호<span className='text-xs opacity-0'>의</span></p>
-              <p className='pl-[13px] pr-[11px] leading-[1]'>이경희<span className='text-xs'>의</span></p>
+              <p className='pl-1 pr-[11px] leading-[1]'>이경희<span className='text-xs'>의</span></p>
               <p className='text-xs leading-[1]'><span className='opacity-0'>아</span>딸</p>
               <p className='font-semibold pl-[9px] leading-[1]'>심영보</p>
             </div>
@@ -165,13 +165,13 @@ function App() {
         <SubTitle>오시는 길을 안내해드립니다.</SubTitle>
         <ContentContainer>
           <Map latitude={37.38237} longitude={127.1014} />
+          <div className='flex justify-between relative bg-white overflow-visible'>
+            <MapButton iconUrl={tmapLogoUrl} name='TMAP' />
+            <MapButton iconUrl={navermapLogoUrl} name='네이버지도' />
+            <MapButton iconUrl={kakaomapLogoUrl} name='카카오맵' />
+          </div>
         </ContentContainer>
       </Section>
-      <div className='flex justify-between relative z-[999] bg-white px-5 overflow-visible'>
-        <MapButton iconUrl={tmapLogoUrl} name='TMAP' />
-        <MapButton iconUrl={navermapLogoUrl} name='네이버지도' />
-        <MapButton iconUrl={kakaomapLogoUrl} name='카카오맵' />
-      </div>
       <Section>
         <Title>Congratulatory</Title>
         <SubTitle>마음을 전하실 곳</SubTitle>
