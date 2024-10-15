@@ -13,12 +13,13 @@ import photo9 from '../assets/images/image_9.png'
 import photo10 from '../assets/images/image_10.png'
 import photo11 from '../assets/images/image_11.png'
 import photo12 from '../assets/images/image_12.png'
+import photo13 from '../assets/images/image_13.png'
 import leftButtonUrl from '../assets/images/leftButton.png'
 import rightButtonUrl from '../assets/images/rightButton.png'
 
 
 const PhotobookSwiper = () => {
-  const photoList = [photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8, photo9, photo10, photo11, photo12]
+  const photoList = [photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8, photo9, photo10, photo11, photo12, photo13]
 
   return (
     <Swiper

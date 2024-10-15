@@ -25,7 +25,7 @@ const CongratulatoryItem = ({
   brideParent1Account,
   brideParent2Account
 }: CongratulatoryItemProps) => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsOpen((prev) => !prev);
@@ -65,10 +65,14 @@ const CongratulatoryItem = ({
           </div>
           <div className={`p-[14px] ${(groomParent2Account || brideParent2Account) && 'border-b border-[#ccc]'}`}>
             <p className={`font-bold ${who === 'groom' ? 'text-[#387BF9]' : 'text-[#EF4576]'} `}>{who === 'groom' ? '신랑' : '신부'} 아버지</p>
-            <div className="flex justify-between items-center mt-[10px]">
-              <p className="whitespace-pre-line font-medium">{who === 'groom' ? groomParent1Account : brideParent1Account}</p> 
-              <TextCopyButton text={`${who === 'groom' ? groomParent1Account : brideParent1Account}`} />
-            </div>  
+            {
+              (who === 'groom' ? groomParent1Account : brideParent1Account) && (
+                <div className="flex justify-between items-center mt-[10px]">
+                  <p className="whitespace-pre-line font-medium">{who === 'groom' ? groomParent1Account : brideParent1Account}</p> 
+                  <TextCopyButton text={`${who === 'groom' ? groomParent1Account : brideParent1Account}`} />
+                </div>
+              )
+            }
           </div>
           {
             (groomParent2Account || brideParent2Account) && (

@@ -27,6 +27,8 @@ declare global {
 }
 
 function App() {
+  const [canScroll, setCanScroll] = useState(false);
+
   const query = new URL(window.location.href);
   const shareQueryString = query.searchParams.get('share');
   const showShare = Boolean(shareQueryString);
@@ -35,6 +37,11 @@ function App() {
     if (!window.Kakao.isInitialized()) {
       window.Kakao.init("4c6ee9bf93490c29dc7ea70a7d4b2eba");
     }
+
+    setInterval(() => {
+      setCanScroll(true);
+    }, 5000);
+
   }, []);
 
   const shareKakao = () => {
@@ -42,14 +49,14 @@ function App() {
       const kakao = window.Kakao;
       kakao.Share.createCustomButton({
         container: '#kakaotalk-sharing-btn',
-        templateId: 113053
+        templateId: 113159,
       });
     }
     
   }
 
   return (
-    <div>
+    <div className={`${canScroll ? '' : 'overflow-hidden h-screen'}`}>
       <Main />
       <Header />
       <Section>
@@ -124,8 +131,8 @@ function App() {
           <WorshipItem isFirst={true} leftText='촛불점화' rightText='양가모친'></WorshipItem>
           <WorshipItem leftText='입장' rightText='신랑 & 신부'></WorshipItem>
           <WorshipItem leftText='찬송' rightText='다같이'></WorshipItem>
-          <WorshipItem leftText='기도' rightText='주례자'></WorshipItem>
-          <WorshipItem leftText='봉독' rightText='주례자' hasMiddle={true} middleText='### NN:NN'></WorshipItem>
+          <WorshipItem leftText='기도' rightText='김성우 목사님'></WorshipItem>
+          <WorshipItem leftText='봉독' rightText='김성우 목사님' hasMiddle={true} middleText='### NN:NN'></WorshipItem>
           <div className='border-[1px] font-semiBold border-[#FADCE7] p-5 rounded-[13px] mt-5'>
             <div className='flex'>
                 <p className='pr-[10px]'>22</p>
@@ -140,13 +147,13 @@ function App() {
               <p>일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔</p>
             </div>
           </div>
-          <WorshipItem leftText='설교' rightText='주례자' hasMiddle={true} middleText='### NN:NN'></WorshipItem>
+          <WorshipItem leftText='설교' rightText='김성우 목사님' hasMiddle={true} middleText='### NN:NN'></WorshipItem>
           <WorshipItem leftText='혼인서약' rightText='신랑 & 신부'></WorshipItem>
-          <WorshipItem leftText='성혼선언' rightText='주례자'></WorshipItem>
+          <WorshipItem leftText='성혼선언' rightText='김성우 목사님'></WorshipItem>
           <WorshipItem leftText='축가' rightText='청년부'></WorshipItem>
-          <WorshipItem leftText='축도' rightText='주례자'></WorshipItem>
+          <WorshipItem leftText='축도' rightText='김성우 목사님'></WorshipItem>
           <WorshipItem leftText='인사/행진' rightText='신랑 & 신부'></WorshipItem>
-          <WorshipItem leftText='혼인서약' rightText='신랑/신부'></WorshipItem>
+          <WorshipItem leftText='혼인서약' rightText='신랑 & 신부'></WorshipItem>
         </ContentContainer>
       </Section> */}
       <Section>
@@ -165,9 +172,11 @@ function App() {
         <SubTitle>오시는 길을 안내해드립니다.</SubTitle>
         <ContentContainer>
           <Map latitude={37.38237} longitude={127.1014} />
-          <div className='flex justify-between relative bg-white overflow-visible'>
+          <div className='flex justify-between relative bg-white overflow-visible gap-1'>
             <MapButton iconUrl={tmapLogoUrl} name='TMAP' />
+            {/* <div className='h-1 w-1'></div> */}
             <MapButton iconUrl={navermapLogoUrl} name='네이버지도' />
+            {/* <div className='h-1 w-1'></div> */}
             <MapButton iconUrl={kakaomapLogoUrl} name='카카오맵' />
           </div>
         </ContentContainer>
@@ -178,15 +187,14 @@ function App() {
         <ContentContainer>
           <CongratulatoryItem
             who='groom'
-            groomAccount={`1111-1111-1111-1111\n카카오뱅크 안식`}
-            groomParent1Account={`1111-1111-1111-1111\n카카오뱅크 안식`}
-            groomParent2Account={`1111-1111-1111-1111\n카카오뱅크 안식`}
+            groomAccount={`795302-04-142372\n국민 안식`}
+            groomParent1Account={`946501-01-301414\n국민 안성진`}
           />
-          <div className='mt-[30px]'>
+          <div className='mt-[14px]'>
             <CongratulatoryItem
               who='bride'
-              brideAccount={`1111-1111-1111-1111\n카카오뱅크 안식`}
-              brideParent1Account={`1111-1111-1111-1111\n카카오뱅크 안식`}
+              brideAccount={`110-351-276692\n신한 심영보`}
+              brideParent1Account={`104414-02-087580\n우체국 심재호`}
             />
           </div>
         </ContentContainer>
