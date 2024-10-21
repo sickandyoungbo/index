@@ -49,14 +49,14 @@ function App() {
       const kakao = window.Kakao;
       kakao.Share.createCustomButton({
         container: '#kakaotalk-sharing-btn',
-        templateId: 113159,
+        templateId: 113053,
       });
     }
     
   }
 
   return (
-    <div className={`${canScroll ? '' : 'overflow-hidden h-screen'}`}>
+    <div className={`${canScroll ? '' : 'overflow-hidden h-dvh'}`}>
       <Main />
       <Header />
       <Section>

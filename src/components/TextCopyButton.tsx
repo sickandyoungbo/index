@@ -9,10 +9,10 @@ const TextCopyButton = ({text}: TextCopyButtonProps) => {
     if (navigator.clipboard) {
       navigator.clipboard.writeText(text)
         .then(() => {
-          alert("클립보드에 복사되었습니다.");
+          alert("계좌번호가 복사되었습니다.");
         })
         .catch(err => {
-          console.error("클립보드 복사 실패: ", err);
+          console.error("계좌번호 복사 실패: ", err);
         });
     } 
   }
